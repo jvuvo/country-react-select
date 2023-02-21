@@ -9,7 +9,7 @@ describe('Common render', () => {
   it('renders without crashing', () => {
     render(
       <CountryPicker
-        item={''}
+        value={''}
         onChange={(value) => {
           console.log(value)
         }}

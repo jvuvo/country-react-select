@@ -1,6 +1,6 @@
 {
   "name": "country-react-select",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React select component for Country, State, City databases. It supports country, state and city dropdown in Reactjs.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

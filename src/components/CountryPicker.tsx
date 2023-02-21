@@ -11,7 +11,7 @@ type CountryPickerProps = {
 }
 
 const CountryPicker = (props: CountryPickerProps) => {
-  const { onChange, placeholder = '', value, isDisabled=false, isMulti=false } = props
+  const { onChange, placeholder = '', value, isDisabled = false, isMulti = false } = props
   const [selectedOptions, setSelectedOptions] = useState<any>([])
   const promiseOptions = (inputValue: string) => getCountries(inputValue)
   useEffect(() => {
