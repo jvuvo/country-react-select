@@ -27,6 +27,9 @@
   "keywords": [
     "react",
     "typescript",
+    "select",
+    "combobox",
+    "ui",
     "country-state-picker",
     "country-state-select"
   ],

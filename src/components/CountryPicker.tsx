@@ -2,24 +2,28 @@ import React, { useState, useEffect } from 'react'
 import AsyncSelect from 'react-select/async'
 import { getCountries } from '../api/AddressApi'
 
-type Props = {
+type CountryPickerProps = {
   onChange: (items: any) => void
-  item: any
+  value: any
   placeholder?: string
+  isDisabled?: boolean
+  isMulti?: boolean
 }
 
-const CountryPicker = (props: Props) => {
-  const { onChange, placeholder = '', item } = props
+const CountryPicker = (props: CountryPickerProps) => {
+  const { onChange, placeholder = '', value, isDisabled=false, isMulti=false } = props
   const [selectedOptions, setSelectedOptions] = useState<any>([])
   const promiseOptions = (inputValue: string) => getCountries(inputValue)
   useEffect(() => {
-    if (item) {
-      setSelectedOptions(item)
+    if (value) {
+      setSelectedOptions(value)
     }
-  }, [item])
+  }, [value])
 
   return (
     <AsyncSelect
+      isDisabled={isDisabled}
+      isMulti={isMulti}
       cacheOptions
       value={selectedOptions}
       classNamePrefix={placeholder}

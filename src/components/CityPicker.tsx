@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react'
 import AsyncSelect from 'react-select/async'
 import { getCities } from '../api/AddressApi'
 
-type Props = {
+type CityPickerProps = {
   onChange: (item: any) => void
-  item: any
-  country: any
-  state: any
+  value: any
+  country: string
+  state: string
   placeholder?: string
 }
 
-const CityPicker = (props: Props) => {
-  const { onChange, placeholder = '', item, country, state } = props
+const CityPicker = (props: CityPickerProps) => {
+  const { onChange, placeholder = '', value, country, state } = props
   const [selectedOptions, setSelectedOptions] = useState<any>([])
   const promiseOptions = (inputValue: string) => getCities(country, state, inputValue)
   useEffect(() => {
-    if (item) {
-      setSelectedOptions(item)
+    if (value) {
+      setSelectedOptions(value)
     }
-  }, [item])
+  }, [value])
 
   return (
     <AsyncSelect
